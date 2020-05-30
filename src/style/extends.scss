@@ -1,0 +1,34 @@
+a {
+  color: #4E92D0;
+  &:link {text-decoration: none;}
+  &:visited {text-decoration: none;}
+  &:hover {color: orange; text-decoration: underline; cursor:pointer;}
+  &:active {text-decoration: underline;}
+}
+
+code {
+  font-family: Consolas,Menlo,Courier,monospace;
+}
+
+.el-menu-item{
+  &:hover {
+    color: #fff !important;
+    background-color: rgb(67, 74, 80) !important;
+  }
+  &.is-active {
+    color: #fff !important;
+    background: rgb(67, 74, 80) !important;
+  }
+}
+
+.el-submenu__title:focus, .el-submenu__title:hover{
+  color: #fff !important;
+  background-color: rgb(67, 74, 80) !important;
+}
+
+.el-page-header__content{
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(73, 80, 96);
+}
+
