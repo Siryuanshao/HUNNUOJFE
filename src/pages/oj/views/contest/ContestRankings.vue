@@ -22,14 +22,16 @@
         empty-text="now loading!!!"
         :header-cell-style="{background:'#F5F7FA',color:'#606266'}"
         :cell-style="computeCellStyle"
-        style="font-size: 12px;">
+        :style="computeFormWidth">
         <el-table-column
           align="center"
           label="#"
+          width="100"
           prop="rank">
         </el-table-column>
         <el-table-column
           align="center"
+          width="200"
           label="User">
           <template slot-scope="scope">
             <span @click="handleProfile(scope.row.userId)" class="linker">{{scope.row.userId}}</span><br/>
@@ -38,17 +40,20 @@
         <el-table-column
           align="center"
           label="Accept"
+          width="100"
           prop="accept">
         </el-table-column>
         <el-table-column
           align="center"
           label="Penalty"
+          width="100"
           prop="penalty">
         </el-table-column>
         <el-table-column
           v-for="(problemId, index) in model.problemSet"
           :key="index"
           align="center"
+          width="100"
           :label="problemId | mappingToCharacter">
           <template slot-scope="scope">
             <template v-if="scope.row.progress[index].rankStatus">
@@ -77,6 +82,11 @@
           problemSet: null,
           rankList: null
         },
+      }
+    },
+    computed: {
+      computeFormWidth: function() {
+        return 'font-size: 12px; width: ' + (5 + this.model.problemSet.length) * 100 + 'px;'
       }
     },
     methods: {
