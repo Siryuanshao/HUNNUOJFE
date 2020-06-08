@@ -14,15 +14,15 @@ export const STORAGE_KEY = {
 }
 
 export const JUDGE_OPTIONS = {
-  STATUS_HASH: ['Pending', 'Judging', 'Accepted', 'Presentation Error', 'Wrong Answer', 'Runtime Error', 'Time Limit Exceeded', 'Memory Limit Exceeded', 'Output Limit Exceeded', 'Compile Error'],
-  SHORT_NAME : ['PD', 'JD', 'AC', 'PE', 'WA', 'RE', 'TLE', 'MLE', 'OLE', 'CE'],
-  STATUS_COLOR_HASH : ['info', 'info', 'success', 'warning', 'danger', 'warning', 'warning', 'warning', 'warning', 'warning'],
+  STATUS_HASH: ['Pending', 'Judging', 'Accepted', 'Presentation Error', 'Wrong Answer', 'Runtime Error', 'Time Limit Exceeded', 'Memory Limit Exceeded', 'Output Limit Exceeded', 'Compile Error', 'System Error'],
+  SHORT_NAME : ['PD', 'JD', 'AC', 'PE', 'WA', 'RE', 'TLE', 'MLE', 'OLE', 'CE', 'SE'],
+  STATUS_COLOR_HASH : ['info', 'info', 'success', 'warning', 'danger', 'warning', 'warning', 'warning', 'warning', 'warning', 'warning'],
   LANGUAGE_HASH: ['C', 'C++', 'Java'],
   STATUS_COLOR: {
     primary: [],
     success: ['Accepted'],
     info: ['Pending', 'Judging'],
-    warning: ['Presentation Error', 'Runtime Error', 'Time Limit Exceeded', 'Memory Limit Exceeded', 'Output Limit Exceeded', 'Compile Error'],
+    warning: ['Presentation Error', 'Runtime Error', 'Time Limit Exceeded', 'Memory Limit Exceeded', 'Output Limit Exceeded', 'Compile Error', 'System Error'],
     danger: ['Wrong Answer']
   }
 }
