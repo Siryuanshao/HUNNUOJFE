@@ -2,15 +2,12 @@
   <div class="submission-detail">
     <el-card>
       <div slot="header">
-        <div v-if="model.sourcecode" class="status">
+        <div v-if="model.sourcecode" class="code-status">
           <el-alert :type="STATUS_COLOR_HASH[model.status]" :closable="false" show-icon>
             <span class="title">{{STATUS_HASH[model.status]}}</span>
             <slot>
-              <div class="content">
-                <template v-if="model.ext">
-                  <pre>{{model.ext}}</pre>
-                </template>
-                <template v-else>
+              <div class="code-info">
+                <template>
                   <span>Time : {{model.timeUsed !== -1 ? model.timeUsed : '--'}}ms</span>
                   <span>Memory : {{model.memoryUsed !== -1 ? model.memoryUsed : '--'}}kB</span>
                   <span>Length : {{model.length}}</span>
@@ -23,7 +20,10 @@
           </el-alert>
         </div>
       </div>
-      <div style="font-size: 12px;">
+      <div class="code-content">
+        <template v-if="model.ext">
+          <pre>{{model.ext}}</pre>
+        </template>
         <Highlight :code="model.sourcecode" :language="LANGUAGE_HASH[model.language]"></Highlight>
       </div>
     </el-card>
@@ -89,22 +89,26 @@
     margin: 20px auto;
     width: 1000px;
     background-color: #F7F7FA;
-    .status {
+    .code-status {
       .title {
         font-size: 20px;
       }
-      .content {
+      .code-info {
         margin-top: 10px;
         font-size: 14px;
         span {
-          color: #333;
+          color: #495060;
           margin-right: 10px;
         }
-        pre {
-          white-space: pre-wrap;
-          word-wrap: break-word;
-          word-break: break-all;
-        }
+      }
+    }
+    .code-content {
+      font-size: 12px;
+      pre {
+        color: #495060;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
       }
     }
   }

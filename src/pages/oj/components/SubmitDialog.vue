@@ -97,9 +97,6 @@
               name: this.redirectPath,
               params: {
                 contestId: cid,
-              },
-              query: {
-                problemId: pid
               }
             })
           }).catch(_ => {
