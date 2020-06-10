@@ -3,7 +3,7 @@
     <el-form ref="form" :model="model" :rules="rules" label-position="top" label-width="70px">
       <el-row :gutter="20">
         <el-col :span="12">
-          <el-form-item v-if="!model.contestId" prop="problemId" label="Problem ID" required>
+          <el-form-item v-if="!model.contestId && model.contestId !== -1" prop="problemId" label="Problem ID" required>
             <el-input type="Number" placeholder="Problem ID(Recommended auto increment)" v-model="model.problemId"></el-input>
           </el-form-item>
           <el-form-item v-else prop="problemId" label="Contest Problem ID" required>
@@ -53,7 +53,7 @@
       <el-form-item prop="hint" label="Hint">
         <el-input type="textarea" :rows="5" v-model="model.hint"></el-input>
       </el-form-item>
-      <el-form-item v-if="!model.contestId" prop="source" label="Source">
+      <el-form-item v-if="!model.contestId && model.contestId !== -1" prop="source" label="Source">
         <el-input placeholder="Source" v-model="model.source"></el-input>
       </el-form-item>
       <el-form-item>
