@@ -68,7 +68,7 @@
       const checkPasswordAgain = (rule, value, callback) => {
         if(!value) {
           return callback(new Error('Please re-enter the password'))
-        } else if (value !== this.registerForm.password) {
+        } else if (value !== this.form1.newPassword) {
           return callback(new Error('Two passwords are inconsistent'))
         } else {
           return callback()
