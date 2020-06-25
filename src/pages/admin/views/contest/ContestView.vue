@@ -45,6 +45,27 @@
       <el-form-item prop="ext" label="Ext">
         <markdown-editor refId="ext" v-model="model.ext"></markdown-editor>
       </el-form-item>
+      <el-form-item v-if="model.type" prop="userPrivilege" label="User Access Privilege">
+        <el-tag
+          style="margin-right: 10px;"
+          :key="index"
+          v-for="(tag, index) in dynamicTags"
+          closable
+          :disable-transitions="false"
+          @close="handleClose(tag)">
+          {{tag}}
+        </el-tag>
+        <el-input
+          class="input-new-tag"
+          v-if="inputVisible"
+          v-model="inputValue"
+          ref="saveTagInput"
+          size="small"
+          @keyup.enter.native="handleInputConfirm"
+          @blur="handleInputConfirm">
+        </el-input>
+        <el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click.native="saveContest('form')">save</el-button>
       </el-form-item>
@@ -69,8 +90,12 @@
           type : '',
           startTime : '',
           endTime : '',
-          ext : ''
+          ext : '',
+          userPrivilege: ''
         },
+        dynamicTags: [],
+        inputVisible: false,
+        inputValue: '',
         rules: {
           title: [
             { required: true, trigger: 'blur' }
@@ -89,10 +114,10 @@
     },
     methods: {
       init() {
+        this.$refs['form'].resetFields()
         if (this.$route.name === 'edit-contest') {
           this.mode = 'edit'
           this.title = 'Edit Contest'
-          this.$refs['form'].resetFields()
           api.getContestDetail(this.$route.params.contestId).then(res => {
             this.model = res.data.data
           }).catch(_ => {
@@ -119,6 +144,23 @@
             return false
           }
         })
+      },
+      handleClose(tag) {
+        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      },
+      showInput() {
+        this.inputVisible = true;
+        this.$nextTick(_ => {
+          this.$refs.saveTagInput.$refs.input.focus();
+        });
+      },
+      handleInputConfirm() {
+        let inputValue = this.inputValue;
+        if (inputValue) {
+          this.dynamicTags.push(inputValue);
+        }
+        this.inputVisible = false;
+        this.inputValue = '';
       }
     },
     watch: {
@@ -126,11 +168,28 @@
         if (newVal !== oldVal) {
           this.init()
         }
+      },
+      dynamicTags: function (value) {
+        this.model.userPrivilege = JSON.stringify(value)
+      },
+      'model.userPrivilege': function (value) {
+        this.dynamicTags = JSON.parse(value)
       }
     }
   }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .button-new-tag {
+    margin-left: 10px;
+    height: 32px;
+    line-height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .input-new-tag {
+    width: 90px;
+    margin-left: 10px;
+    vertical-align: bottom;
+  }
 </style>
