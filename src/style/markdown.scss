@@ -69,6 +69,8 @@
     margin-bottom: 15px;
     background: #f8f8f9;
     border: 1px dashed #e9eaec;
+    overflow: auto;
+    overflow-y: hidden;
   }
 
   code {

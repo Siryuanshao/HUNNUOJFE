@@ -7,7 +7,8 @@
     <div class="footer">
       <p>
         Hunan Normal University Online Judge {{version}}<br />
-        Design & Developer : Siryuanshao<br/>
+        Design & Developer : <a href="https://github.com/Siryuanshao" target="_blank">Siryuanshao</a><br/>
+        OpenSource Project & Bug Report: <a href="https://github.com/Siryuanshao/HUNNUOJDOCS" target="_blank">Online Judge</a><br/>
         [THANKS TO] <a href="https://github.com/QingdaoU/OnlineJudge" target="_blank">qduoj</a>,
         <a href="https://cn.vuejs.org/" target="_blank">vue</a>,
         <a href="https://element.eleme.cn/#/zh-CN" target="_blank">element-ui</a>

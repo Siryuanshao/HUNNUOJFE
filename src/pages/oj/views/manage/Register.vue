@@ -9,13 +9,13 @@
             <el-input v-model="registerForm.userId" type="text" placeholder="User ID" />
           </el-form-item>
           <el-form-item prop="userName">
-            <el-input v-model="registerForm.userName" type="text" placeholder="User nickname" />
+            <el-input v-model="registerForm.userName" type="text" placeholder="Nickname" />
           </el-form-item>
           <el-form-item prop="password">
             <el-input v-model="registerForm.password" type="password" placeholder="Password" />
           </el-form-item>
           <el-form-item prop="password_again">
-            <el-input v-model="registerForm.password_again" type="password" placeholder="Repeat password Again" />
+            <el-input v-model="registerForm.password_again" type="password" placeholder="Repeat Password Again" />
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="handleRegister('registerForm')" :loading="isOnLoading" style="width: 45%;">Register</el-button>
@@ -51,9 +51,9 @@
       }
       const checkUserName = (rule, value, callback) => {
         if (!value) {
-          return callback(new Error('User nickname cannot be empty'))
+          return callback(new Error('Nickname cannot be empty'))
         } else if (value.length > 18 || value.length < 2) {
-          return callback(new Error('User nickname must be between 2 and 18 in length'))
+          return callback(new Error('Nickname must be between 2 and 18 in length'))
         } else {
           return callback()
         }

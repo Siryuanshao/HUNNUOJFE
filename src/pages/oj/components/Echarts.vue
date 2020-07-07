@@ -96,6 +96,7 @@
         for (let i = 0; i < this.dataArr.length; i++) {
           total += this.dataArr[i].value
         }
+        if(total === 0) total = 1
         for (let i = 0; i < this.dataArr.length; i++) {
           this.dataMap.push(this.dataArr[i].value / total)
         }
