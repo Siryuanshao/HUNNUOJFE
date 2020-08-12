@@ -24,11 +24,12 @@
         <el-table-column
           align="center"
           prop="contestId"
-          width="100"
+          width="75"
           label="ID">
         </el-table-column>
         <el-table-column
           align="center"
+          width="475"
           label="Title">
           <template slot-scope="scope">
             <a @click='handleContestView(scope.row.contestId)'>{{scope.row.title}}</a>
