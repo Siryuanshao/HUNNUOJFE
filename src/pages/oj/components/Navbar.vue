@@ -3,18 +3,18 @@
     <el-menu
       mode="horizontal"
       @select="handleRoute"
-      background-color="#545c64"
+      background-color="rgb(60, 140, 230)"
       text-color="#fff"
       active-text-color="#fff">
       <div class="header-logo">
         <span>HUNNU Online Judge</span>
       </div>
-      <el-menu-item index="homepage"><i class="el-icon-s-home"></i>Home</el-menu-item>
-      <el-menu-item index="problem-list"><i class="el-icon-s-opportunity"></i>Problems</el-menu-item>
-      <el-menu-item index="submission-list"><i class="el-icon-s-marketing"></i>Status</el-menu-item>
-      <el-menu-item index="contest-list"><i class="el-icon-trophy-1"></i>Contest</el-menu-item>
-      <el-menu-item index="rank-list"><i class="el-icon-s-data"></i>ACM Rank</el-menu-item>
-      <el-menu-item index="faqs"><i class="el-icon-question"></i>FAQs</el-menu-item>
+      <el-menu-item index="homepage"><i class="el-icon-s-home" style="color: #fff"></i>Home</el-menu-item>
+      <el-menu-item index="problem-list"><i class="el-icon-s-opportunity" style="color: #fff"></i>Problems</el-menu-item>
+      <el-menu-item index="submission-list"><i class="el-icon-s-marketing" style="color: #fff"></i>Status</el-menu-item>
+      <el-menu-item index="contest-list"><i class="el-icon-trophy-1" style="color: #fff"></i>Contest</el-menu-item>
+      <el-menu-item index="rank-list"><i class="el-icon-s-data" style="color: #fff"></i>ACM Rank</el-menu-item>
+      <el-menu-item index="faqs"><i class="el-icon-question" style="color: #fff"></i>FAQs</el-menu-item>
       <li class="header-userInfo">
         <template v-if="!modalStatus">
           <div class="header-userInfo-notLogin">
