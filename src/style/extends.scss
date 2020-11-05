@@ -10,17 +10,6 @@ code {
   font-family: Consolas,Menlo,Courier,monospace;
 }
 
-.el-menu-item{
-  &:hover {
-    color: #fff !important;
-    background-color: rgb(75, 148, 235) !important;
-  }
-  &.is-active {
-    color: #fff !important;
-    background: rgb(75, 148, 235) !important;
-  }
-}
-
 .el-submenu__title:focus, .el-submenu__title:hover{
   color: #fff !important;
   background-color: rgb(75, 148, 235) !important;

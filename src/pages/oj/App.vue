@@ -21,6 +21,12 @@
   import NavBar from '@oj/components/Navbar'
   export default {
     components: { NavBar },
+    created () {
+      try {
+        document.body.removeChild(document.getElementById('app-loader'))
+      } catch (e) {
+      }
+    },
     mounted() {
       this.year = new Date().getFullYear()
     },

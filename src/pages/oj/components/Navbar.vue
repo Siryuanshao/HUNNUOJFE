@@ -3,18 +3,17 @@
     <el-menu
       mode="horizontal"
       @select="handleRoute"
-      background-color="rgb(60, 140, 230)"
-      text-color="#fff"
-      active-text-color="#fff">
+      text-color="#666"
+      active-text-color="rgb(17, 128, 128)">
       <div class="header-logo">
         <span>HUNNU Online Judge</span>
       </div>
-      <el-menu-item index="homepage"><i class="el-icon-s-home" style="color: #fff"></i>Home</el-menu-item>
-      <el-menu-item index="problem-list"><i class="el-icon-s-opportunity" style="color: #fff"></i>Problems</el-menu-item>
-      <el-menu-item index="submission-list"><i class="el-icon-s-marketing" style="color: #fff"></i>Status</el-menu-item>
-      <el-menu-item index="contest-list"><i class="el-icon-trophy-1" style="color: #fff"></i>Contest</el-menu-item>
-      <el-menu-item index="rank-list"><i class="el-icon-s-data" style="color: #fff"></i>ACM Rank</el-menu-item>
-      <el-menu-item index="faqs"><i class="el-icon-question" style="color: #fff"></i>FAQs</el-menu-item>
+      <el-menu-item index="homepage"><i class="el-icon-s-home"></i>Home</el-menu-item>
+      <el-menu-item index="problem-list"><i class="el-icon-s-opportunity"></i>Problems</el-menu-item>
+      <el-menu-item index="submission-list"><i class="el-icon-s-marketing"></i>Status</el-menu-item>
+      <el-menu-item index="contest-list"><i class="el-icon-trophy-1"></i>Contest</el-menu-item>
+      <el-menu-item index="rank-list"><i class="el-icon-s-data"></i>ACM Rank</el-menu-item>
+      <el-menu-item index="faqs"><i class="el-icon-question"></i>FAQs</el-menu-item>
       <li class="header-userInfo">
         <template v-if="!modalStatus">
           <div class="header-userInfo-notLogin">
@@ -89,12 +88,13 @@
     height: 60px;
     width: 100%;
     min-width: 1200px;
+    box-shadow: 0px 0px 5px #888888;
     &-logo {
       margin: 0px 2%;
       font-size: 20px;
       line-height: 60px;
       float: left;
-      color: #fff;
+      color: #666;
     }
     &-userInfo {
       position: absolute;
