@@ -6,8 +6,7 @@
           <el-menu
             default-active="profile-settings"
             @select="handleRoute"
-            text-color="#999"
-            active-text-color="#fff">
+            text-color="#666">
             <div class="avatar-editor">
               <img :src="profile.avatar"/>
             </div>

@@ -25,7 +25,7 @@
           <el-dropdown trigger="hover">
 					<span class="el-dropdown-link header-userInfo-login">
             <img :src="profile.avatar"/>
-            <i class="el-icon-caret-bottom"></i>
+            <i class="el-icon-caret-bottom" style="color: #666666"></i>
 					</span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item @click.native="handleRoute('user-profile')">Profile</el-dropdown-item>
