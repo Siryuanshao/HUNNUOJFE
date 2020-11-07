@@ -219,10 +219,12 @@ function ajax (method, url, options) {
       data
     }).then((res) => {
       if (res.data.error) {
-        if (res.data.err_info !== "session非法") {
-          Vue.prototype.$message.error(res.data.err_info)
-        } else {
+        if (res.data.err_info === "用户没有登录") {
+          Vue.prototype.$message.info(res.data.err_info)
+        } else if (res.data.err_info === "session非法") {
           Vue.prototype.$message.warning(res.data.err_info)
+        } else {
+          Vue.prototype.$message.error(res.data.err_info)
         }
         reject(res)
       } else {
